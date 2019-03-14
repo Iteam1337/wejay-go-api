@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "wejay": {
+      "schemaPath": "schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "default": "http://localhost:8080/query",
+          "production": "https://uohc0ora08.execute-api.eu-west-1.amazonaws.com/dev/graphql"
+        }
+      }
+    }
+  }
+}

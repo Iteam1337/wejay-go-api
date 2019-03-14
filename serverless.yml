@@ -1,0 +1,30 @@
+service: wejay-go
+
+provider:
+  name: aws
+  region: eu-west-1
+  runtime: go1.x
+  environment:
+    SPOTIFY_ID: 8f6a97af1d5d481a80db1c06fd648b56
+    SPOTIFY_SECRET: dd9a892639d34b8cad53b00654a89548
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  graphqlapi:
+    handler: bin/graphQLAPI
+    events:
+      - http:
+          path: /graphql
+          method: POST
+          cors:
+            origin: '*'
+      - http:
+          path: /graphql
+          method: GET
+          cors:
+            origin: '*'
